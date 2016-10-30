@@ -1,15 +1,18 @@
 # install aptitude
 sudo apt-get install aptitude
-# setup ssh keys
 ssh-keygen -t rsa -b 4096 -C $1
 eval $( ssh-agent -s )
 ssh-add .ssh/id_rsa
 echo "Add this key to GitHub"
-less .ssh/id_rsa.pub
+head .ssh/id_rsa.pub
 # get git
 sudo apt install git
 # get vim environment
 git clone git@github.com:dosaygo-coder-0/environments.git
+# setup env
+cp environments/.bashrc .
+cp environments/.vimrc .
+sudo cp environments/vimrc /etc/vim/vimrc
 # get pip
 curl https://bootstrap.pypa.io/get-pip.py -o getpip.py
 sudo python getpip.py
