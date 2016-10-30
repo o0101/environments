@@ -7,6 +7,10 @@ echo "Add this key to GitHub"
 head .ssh/id_rsa.pub
 # get git
 sudo apt install git
+# setup git
+git config --global user.email "$1"
+git config --global user.name "$2"
+git config --global core.editor "vim"
 # get vim environment
 git clone git@github.com:dosaygo-coder-0/environments.git
 # setup env
