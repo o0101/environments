@@ -1,0 +1,22 @@
+{
+  "name": "environments",
+  "version": "1.0.0",
+  "description": "my envs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dosyago-coder-0/environments.git"
+  },
+  "keywords": [
+    "envs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dosyago-coder-0/environments/issues"
+  },
+  "homepage": "https://github.com/dosyago-coder-0/environments#readme"
+}

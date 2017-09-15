@@ -1,0 +1,1 @@
+git add . && git commit && npm version $1 && git push --tags && git push && npm publish
