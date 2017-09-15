@@ -1,4 +1,4 @@
 # setup env
-cp environments/.bashrc .
-cp environments/.vimrc .
-sudo cp environments/vimrc /etc/vim/vimrc
+cp .bashrc .
+cp .vimrc .
+sudo cp vimrc /etc/vim/vimrc
