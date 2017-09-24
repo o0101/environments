@@ -1,0 +1,11 @@
+[user]
+	email = writetocris@outlook.com
+	name = Cris
+[core]
+	editor = vim
+[push]
+	default = simple
+[github]
+	user = dosyago-coder-0
+[ghi]
+	token = ::secrettoken
