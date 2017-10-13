@@ -5,6 +5,7 @@ sudo cp gut /usr/local/bin
 sudo cp logoff /usr/local/bin
 sudo cp logon /usr/local/bin
 sudo cp arx /usr/local/bin
+sudo cp ngrok /usr/local/bin
 cp .bashrc ~/
 cp .vimrc ~/
 cp .gitconfig ~/
