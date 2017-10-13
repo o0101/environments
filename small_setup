@@ -1,4 +1,5 @@
 # setup env
+sudo cp local_gae /usr/local/bin
 sudo cp gpush /usr/local/bin
 sudo cp memfree /usr/local/bin
 sudo cp gut /usr/local/bin
