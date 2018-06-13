@@ -1,4 +1,4 @@
-git clone git@localhost:/home/git/$1 --recursive
+git clone git@git.dosaygo.com:/home/git/$1 --recursive
 cd $1
 git submodule foreach --recursive 'git checkout master || :'
 cd ..
