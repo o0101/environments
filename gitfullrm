@@ -4,6 +4,11 @@ if [[ $# -eq 0 ]] ; then
   exit 0
 fi
 
+read -p "This will remove all references to $1 from your whole commit history. Continue? (yes/no)"
+if [ "$REPLY" != "yes" ]; then
+  exit
+fi
+
 git count-objects -vH
 
 # Create tracking branches of all branches
