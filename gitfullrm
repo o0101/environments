@@ -4,12 +4,16 @@ if [[ $# -eq 0 ]] ; then
   exit 0
 fi
 
-read -p "This will remove all references to $1 from your whole commit history. Continue? (yes/no)"
+git count-objects -vH
+
+read -p "This will remove all references to $1 from your whole commit history. Continue? (yes/no) "
 if [ "$REPLY" != "yes" ]; then
+  echo "Exiting..."
   exit
 fi
 
-git count-objects -vH
+echo "Doing it"
+
 
 # Create tracking branches of all branches
 for remote in `git branch -r | grep -v /HEAD`; do git checkout --track $remote ; done
