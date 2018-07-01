@@ -75,3 +75,4 @@ endif
 
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
+set viminfo='100,<1000,s100,h
