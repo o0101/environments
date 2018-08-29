@@ -7,8 +7,8 @@ sudo cp logoff /usr/local/bin
 sudo cp logon /usr/local/bin
 sudo cp arx /usr/local/bin
 sudo cp ngrok /usr/local/bin
-sudo cp gclone /user/local/bin
-sudo cp gitfullrm /user/local/bin
+sudo cp gclone /usr/local/bin
+sudo cp gitfullrm /usr/local/bin
 cp .bashrc ~/
 cp .vimrc ~/
 cp .gitconfig ~/
