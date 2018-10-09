@@ -1,4 +1,25 @@
 sudo cp commands/* /usr/local/bin
+cp vimrc ~/.vimrc
+mkdir ebs-tmp
+cd ebs-tmp
+sudo apt-get install git
+git config --global user.email "22254235+crislin2046@users.noreply.github.com"
+git config --global user.name "Cris"
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt-get install curl
+curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+sudo bash ./nodesource_setup.sh
+sudo apt -y install nodejs
+sudo apt -y install build-essential
+curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh -o install_nvm.sh
+bash ./install_nvm.sh
+cd .. 
+rm -rf ebs-tmp
+echo "OKOK"
+
+
+
 
 
 
