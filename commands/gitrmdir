@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ $# -eq 0 ]] ; then
-  echo 'Usage: gitfullrm <directory name to remove>'
+  echo 'Usage: gitrmdir <directory name to remove>'
   exit 0
 fi
 
