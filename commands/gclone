@@ -1,0 +1,2 @@
+git clone --recurse $1
+git submodule foreach git checkout master
