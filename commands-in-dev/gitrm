@@ -1,0 +1,29 @@
+#!/bin/bash
+if [[ $# -eq 0 ]] ; then
+  echo 'Usage: gitrm <file path to remove>'
+  exit 0
+fi
+
+git count-objects -vH
+
+read -p "This will remove all references to $1 from your whole commit history. Continue? (yes/no) "
+if [ "$REPLY" != "yes" ]; then
+  echo "Exiting..."
+  exit
+fi
+
+echo "Doing it"
+
+
+# Remove $1 the file name from all commits in this branch
+
+git filter-branch -f --tree-filter 'rm -f '"$1"'' HEAD
+
+# Perform a garbage collection to remove commits with no refs
+git gc --prune=all --aggressive
+
+# Force push all branches to overwrite their history
+# (use with caution!)
+git push origin --force
+git push origin --tags --force
+git count-objects -vH
