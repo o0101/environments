@@ -1,0 +1,1 @@
+git submodule foreach --recursive 'git checkout '"$1"' || git checkout -b '"$1"' || :'
