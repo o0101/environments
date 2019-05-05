@@ -1,5 +1,5 @@
 sudo cp commands/* /usr/local/bin
-cp vimrc ~/.vimrc
+cp vimrc /home/$USER/.vimrc
 
 
 
