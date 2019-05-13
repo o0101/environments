@@ -1,3 +1,2 @@
 branch="$1"
 (git checkout $branch || git checkout -b $branch) && git submodule foreach --recursive 'git checkout '"$branch"' || git checkout -b '"$branch"' || :'
-gut 1
