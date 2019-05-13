@@ -1,0 +1,2 @@
+branch="$1"
+git submodule foreach --recursive "git push --set-upstream origin $branch" && git push --set-upstream origin $branch
