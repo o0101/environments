@@ -1,7 +1,9 @@
 #!/bin/bash
 
 sudo apt-get update && sudo apt-get -y upgrade
-sudo apt -y install curl nodejs
+sudo apt -y install curl nodejs vim 
+git config --global core.editor "vim"
+sudo update-alternatives --config editor
 curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
 sudo bash ./nodesource_setup.sh
 sudo apt -y install nodejs build-essential
