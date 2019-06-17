@@ -1,3 +1,5 @@
+set +e;
 message="$1"
 git submodule foreach --recursive 'gut "'"$message"'" || :'
 git add .; git commit -m '"'"$message"'"'; git pull; git push;
+set -e;
