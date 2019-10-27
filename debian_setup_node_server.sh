@@ -5,7 +5,7 @@ if [ -z "$1" ]
     echo "Need to add 1 argument: domain name"
     exit 1
 fi 
-git config --global user.email "cris@dosyago.com"
+git config --global user.email "22254235+crislin2046@users.noreply.github.com"
 git config --global user.name "Cris Stringfellow"
 sudo apt-get update && sudo apt-get -y upgrade
 sudo apt -y install curl nodejs certbot vim 
