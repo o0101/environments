@@ -22,3 +22,4 @@ sudo apt -y install dnsutils whois
 sudo apt autoremove
 sudo certbot certonly --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory --manual-public-ip-logging-ok -d "*.$1" -d $1
 sudo npm i -g serve nodemon
+sudo apt install psmisc htop nethogs
