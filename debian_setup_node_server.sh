@@ -6,10 +6,10 @@ if [ -z "$1" ]
 fi 
 git config --global user.email "22254235+crislin2046@users.noreply.github.com"
 git config --global user.name "Cris Stringfellow"
-sudo apt-get update && sudo apt-get -y upgrade
-sudo apt -y install curl nodejs certbot vim 
 git config --global core.editor "vim"
 sudo update-alternatives --config editor
+sudo apt-get update && sudo apt-get -y upgrade
+sudo apt -y install curl nodejs certbot vim 
 curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
 sudo bash ./nodesource_setup.sh
 sudo apt -y install nodejs build-essential
