@@ -1,1 +1,1 @@
-diff -bqr -x node_modules $1 $2 | sort 
+diff -bqr -x node_modules -x .git $1 $2 | sort 
