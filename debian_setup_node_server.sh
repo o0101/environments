@@ -29,3 +29,9 @@ fi
 sudo npm i -g serve nodemon pm2
 sudo apt install psmisc htop nethogs
 sudo apt install libcgroup1 cgroup-tools
+curl -L -o bat.deb https://github.com/sharkdp/bat/releases/download/v0.13.0/bat_0.13.0_amd64.deb
+sudo dpkg -i bat.deb
+gclone https://github.com/eth-p/bat-extras.git
+cd bat-extras
+sudo ./build --install
+
