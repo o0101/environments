@@ -34,4 +34,4 @@ sudo dpkg -i bat.deb
 gclone https://github.com/eth-p/bat-extras.git
 cd bat-extras
 sudo ./build --install
-
+sudo apt -y install expect
