@@ -36,4 +36,5 @@ gclone https://github.com/eth-p/bat-extras.git
 sudo ./bat-extras/build --install
 sudo rm -rf ./bat-extras
 sudo apt -y install expect
-
+sudo npm i -g sloc
+sudo apt install cloc sloccount
