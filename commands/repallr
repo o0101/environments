@@ -1,0 +1,17 @@
+#!/bin/sh
+
+echo
+echo You requested to replace all occurrences of $2 
+echo with $3 in $1 recursively, ignoring $4 directories
+
+sleep 3 
+
+echo
+echo -n "Do you want to do this (y/n)? "
+read answer
+
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+	find . -type d -iname "$4" -prune -o -type f -iname "$1" -exec sed -i '' -e "s/$2/$3/g" {} +
+else
+	exit 1
+fi
