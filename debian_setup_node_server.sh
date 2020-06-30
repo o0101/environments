@@ -32,8 +32,9 @@ sudo apt install libcgroup1 cgroup-tools
 curl -L -o bat.deb https://github.com/sharkdp/bat/releases/download/v0.13.0/bat_0.13.0_amd64.deb
 sudo dpkg -i bat.deb
 rm bat.deb
+npm i -g prettier
 gclone https://github.com/eth-p/bat-extras.git
-sudo ./bat-extras/build --install
+sudo ./bat-extras/build.sh --install
 sudo rm -rf ./bat-extras
 sudo apt -y install expect
 sudo npm i -g sloc
