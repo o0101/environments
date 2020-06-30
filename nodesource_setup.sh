@@ -93,7 +93,8 @@ node_deprecation_warning() {
           "X${NODENAME}" == "XNode.js 7.x" ||
           "X${NODENAME}" == "XNode.js 8.x LTS Carbon" ||
           "X${NODENAME}" == "XNode.js 9.x" ||
-          "X${NODENAME}" == "XNode.js 11.x" ]]; then
+          "X${NODENAME}" == "XNode.js 11.x" ||
+          "X${NODENAME}" == "XNode.js 13.x" ]]; then
 
         print_bold \
 "                            DEPRECATION WARNING                            " "\
@@ -105,8 +106,9 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js 10 LTS \"Dubnium\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_10.x — Node.js 10 LTS \"Dubnium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -133,8 +135,9 @@ This script, located at ${bold}https://deb.nodesource.com/setup${normal}, used t
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js 10 LTS \"Dubnium\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_10.x — Node.js 10 LTS \"Dubnium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal}
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
 
@@ -250,6 +253,7 @@ check_alt "Uruk GNU/Linux" "lugalbanda" "Ubuntu" "xenial"
 check_alt "BOSS"          "anokha"   "Debian" "wheezy"
 check_alt "BOSS"          "anoop"    "Debian" "jessie"
 check_alt "BOSS"          "drishti"  "Debian" "stretch"
+check_alt "BOSS"          "unnati"   "Debian" "buster"
 check_alt "bunsenlabs"    "bunsen-hydrogen" "Debian" "jessie"
 check_alt "bunsenlabs"    "helium"   "Debian" "stretch"
 check_alt "Tanglu"        "chromodoris" "Debian" "jessie"
@@ -264,6 +268,7 @@ check_alt "Deepin"        "unstable" "Debian" "sid"
 check_alt "Deepin"        "stable"   "Debian" "buster"
 check_alt "Pardus"        "onyedi"   "Debian" "stretch"
 check_alt "Liquid Lemur"  "lemur-3"  "Debian" "stretch"
+check_alt "Astra Linux"   "orel"     "Debian" "stretch"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."
