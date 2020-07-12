@@ -1,2 +1,0 @@
-git log --all --pretty=format:%H $1 | xargs -n1 -I% sh -c "git ls-tree % $1 | grep -q $2 && echo %"
-
