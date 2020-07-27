@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/dosyago-coder-0/environments/issues"
   },
-  "homepage": "https://github.com/dosyago-coder-0/environments#readme"
+  "homepage": "https://github.com/dosyago-coder-0/environments#readme",
+  "funding": {
+    "url": "https://github.com/sponsors/cris691",
+    "type": "github"
+  }
 }
