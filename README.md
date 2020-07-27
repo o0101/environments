@@ -8,3 +8,4 @@ My coding environments, and useful commands.
 
 Also includes a script for counting lines of code using common tools.
 
+Now includes a funding block in the NPM 
