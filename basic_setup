@@ -1,5 +1,6 @@
 sudo cp commands/* /usr/local/bin
 cp vimrc /home/$USER/.vimrc
+sudo cp vimrc /root/.vimrc
 
 
 
