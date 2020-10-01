@@ -4,7 +4,7 @@
 
 My coding **environments** (some dotfiles, and configs) and useful tools, and commands. 
 
-I do almost all my work in cloud VPS, so these scripts help me get set up quickly and work in vim and got efficiently.
+I do almost all my work in cloud VPS, so these scripts help me get set up quickly and work in vim and git efficiently.
 
 Also includes a script for counting lines of code using common tools.
 
