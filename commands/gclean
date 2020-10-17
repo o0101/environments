@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+bash -c "java --version || sudo apt -y install default-jre"
+tdir=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1)
+mkdir temp$tdir
+cd temp$tdir
+git clone --mirror $1
+curl -L -o bfg.jar https://repo1.maven.org/maven2/com/madgag/bfg/1.13.0/bfg-1.13.0.jar
+repo=$(ls -d -1 *.git)
+cd $repo
+shift
+java -jar ../bfg.jar "$@"
+
+

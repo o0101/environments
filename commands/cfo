@@ -1,0 +1,3 @@
+#!/bin/bash
+fortune /usr/share/games/cfortunes/
+
