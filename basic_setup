@@ -1,5 +1,5 @@
 sudo cp commands/* /usr/local/bin
-cp vimrc /home/$USER/.vimrc
+cp vimrc $HOME/.vimrc
 sudo cp vimrc /root/.vimrc
 sudo mkdir -p /usr/share/games/cfortunes/
 sudo cp cfortunes/* /usr/share/games/cfortunes/
