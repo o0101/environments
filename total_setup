@@ -16,6 +16,7 @@ curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh -o
 bash ./install_nvm.sh
 cd .. 
 rm -rf ebs-tmp
+sudo cp vimrc /root/.vimrc
 echo "OKOK"
 
 
