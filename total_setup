@@ -17,6 +17,10 @@ bash ./install_nvm.sh
 cd .. 
 rm -rf ebs-tmp
 sudo cp vimrc /root/.vimrc
+source ~/.nvm/nvm.sh
+source ~/.bash_profile
+nvm install --lts
+npm i -g npm
 echo "OKOK"
 
 
