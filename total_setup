@@ -8,10 +8,10 @@ git config --global user.name "Cris"
 sudo apt -y update
 sudo apt -y upgrade
 sudo apt-get install curl
-curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
 sudo bash ./nodesource_setup.sh
 sudo apt -y install nodejs
-sudo apt -y install build-essential
+sudo apt install build-essential
 curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh -o install_nvm.sh
 bash ./install_nvm.sh
 cd .. 
