@@ -1,0 +1,3 @@
+#!/bin/bash
+
+git for-each-ref --sort=-committerdate refs/heads/ refs/remotes/ --format='%(color:cyan)%(authordate:short) %(color:reset)%(objectname:short) %(color:red)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))'
