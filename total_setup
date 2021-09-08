@@ -1,5 +1,4 @@
-sudo cp commands/* /usr/local/bin
-cp vimrc ~/.vimrc
+./basic_setup
 mkdir ebs-tmp
 cd ebs-tmp
 sudo apt-get install git

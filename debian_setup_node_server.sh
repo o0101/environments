@@ -4,6 +4,7 @@ if [ -z "$1" ]
   then
     echo "Need to add 1 argument: domain name"
 fi 
+./basic_setup
 git config --global user.email "22254235+crislin2046@users.noreply.github.com"
 git config --global user.name "Cris Stringfellow"
 git config --global core.editor "vim"

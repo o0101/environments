@@ -1,4 +1,5 @@
 #!/bin/bash
 
 sudo apt install fortune
+sodu apt install dnsutils
 
