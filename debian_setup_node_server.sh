@@ -11,9 +11,6 @@ git config --global core.editor "vim"
 sudo update-alternatives --config editor
 sudo apt-get update && sudo apt-get -y upgrade
 sudo apt -y install curl nodejs certbot vim 
-curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
-sudo bash ./nodesource_setup.sh
-rm nodesource_setup.sh
 sudo apt -y install nodejs build-essential
 curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh -o install_nvm.sh
 bash ./install_nvm.sh
