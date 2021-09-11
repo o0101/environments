@@ -29,6 +29,8 @@ if [ -z "$1" ]
   else
 	sudo certbot certonly --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory --manual-public-ip-logging-ok -d "*.$1" -d $1
 fi 
+mkdir -p ./sslcerts
+sudo cp -L /etc/letsencrypt/live/$1/* ./sslcerts/
 sudo npm i -g serve nodemon pm2
 sudo apt install psmisc htop nethogs
 sudo apt install libcgroup1 cgroup-tools
