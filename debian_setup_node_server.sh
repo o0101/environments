@@ -8,6 +8,7 @@ fi
 git config --global user.email "22254235+crislin2046@users.noreply.github.com"
 git config --global user.name "Cris Stringfellow"
 git config --global core.editor "vim"
+git config --global pull.rebase false
 sudo update-alternatives --config editor
 sudo apt-get update && sudo apt-get -y upgrade
 sudo apt -y install curl nodejs certbot vim 
@@ -19,6 +20,8 @@ sudo bash ./install_nvm.sh
 rm install_nvm.sh
 source $HOME/.profile
 source $HOME/.nvm/nvm.sh
+source ~/.bash_profile
+npm i -g npm
 nvm install --lts
 sudo nvm install --lts
 sudo apt -y install dnsutils whois
@@ -44,3 +47,4 @@ sudo rm -rf ./bat-extras
 sudo apt -y install expect
 sudo npm i -g sloc
 sudo apt install cloc sloccount
+echo "OKOK"

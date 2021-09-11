@@ -9,3 +9,11 @@ I do almost all my work in cloud VPS, so these scripts help me get set up quickl
 Also includes a script for counting lines of code using common tools.
 
 Now includes a funding block in the NPM 
+
+## Use
+
+Use 
+
+`$ ./debian_setup_node_server.sh`
+
+to install everything you need.
