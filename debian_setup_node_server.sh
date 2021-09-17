@@ -47,4 +47,4 @@ sudo rm -rf ./bat-extras
 sudo apt -y install expect
 sudo npm i -g sloc
 sudo apt install cloc sloccount
-echo "OKOK"
+echo "YOU. ARE. AWESOME! :p ;) xx"
