@@ -14,6 +14,6 @@ Now includes a funding block in the NPM
 
 Use 
 
-`$ ./debian_setup_node_server.sh`
+`curl -s https://raw.githubusercontent.com/i5ik/environments/master/install.sh | bash /dev/stdin [DOMAIN_NAME]`
 
-to install everything you need.
+to install everything you need. Where `DOMAIN_NAME is an optional parameter to aquire TLS certs from LetsEncrypt
