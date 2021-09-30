@@ -14,6 +14,6 @@ Now includes a funding block in the NPM
 
 Use 
 
-`curl -L -O https://raw.githubusercontent.com/i5ik/environments/master/install.sh && ./install.sh [DOMAIN_NAME]`
+`curl -L -O https://raw.githubusercontent.com/i5ik/environments/master/install.sh && chmod +x ./install.sh && ./install.sh [DOMAIN_NAME]`
 
 to install everything you need. Where `DOMAIN_NAME is an optional parameter to aquire TLS certs from LetsEncrypt
