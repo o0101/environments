@@ -10,6 +10,7 @@ git config --global user.email "22254235+crislin2046@users.noreply.github.com"
 git config --global user.name "Cris Stringfellow"
 git config --global core.editor "vim"
 git config --global pull.rebase false
+git config --global init.defaultBranch boss
 sudo update-alternatives --config editor
 sudo apt-get update && sudo apt-get -y upgrade
 sudo apt -y install curl nodejs certbot vim 
