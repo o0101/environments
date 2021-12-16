@@ -1,0 +1,6 @@
+# nam - node additional manuals
+# USAGE: nam <name of module>
+# e.g. nam http
+# source: https://stackoverflow.com/a/66395324
+
+curl https://raw.githubusercontent.com/nodejs/node/master/doc/api/$1.md | pandoc --from markdown --to plain | less
