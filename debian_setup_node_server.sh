@@ -49,5 +49,11 @@ sudo ./bat-extras/build.sh --install
 sudo rm -rf ./bat-extras
 sudo apt -y install expect
 sudo npm i -g sloc
-sudo apt install cloc sloccount
+sudo apt install cloc sloccount more-utils
+sudo groupadd no-net
+sudo useradd -g no-net netless
+echo "Add the following line to sudoers"
+echo "ALL ALL=(:no-net) NOPASSWD:ALL"
+read -p "Enter to edit sudoers"
+sudo visudo
 echo "YOU. ARE. AWESOME! :p ;) xx"
