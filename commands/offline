@@ -1,0 +1,8 @@
+#!/bin/bash
+
+GID=$(id -g netless)
+rule="OUTPUT -m owner --gid-owner $GID -j DROP"
+sudo iptables -S | grep -q "$rule" || sudo iptables -A $rule
+echo "Starting $@ with no internet access..."
+sudo -g no-net "$@"
+
