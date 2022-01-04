@@ -5,11 +5,9 @@ sudo mkdir -p /usr/share/games/cfortunes/
 sudo cp cfortunes/* /usr/share/games/cfortunes/
 sudo apt -y install pandoc iptables moreutils
 cp .bash_aliases $HOME/.bash_aliases
-
-
-
-
-
-
-
+cd $HOME
+echo Locking down my home directory for my account "'"$(whoami)"'"
+chmod 750 .
+chmod o-rwx *
+chmod o-rwx .*
 
