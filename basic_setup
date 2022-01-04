@@ -3,7 +3,7 @@ cp vimrc $HOME/.vimrc
 sudo cp vimrc /root/.vimrc
 sudo mkdir -p /usr/share/games/cfortunes/
 sudo cp cfortunes/* /usr/share/games/cfortunes/
-sudo apt -y install pandoc
+sudo apt -y install pandoc iptables
 cp .bash_aliases $HOME/.bash_aliases
 
 
