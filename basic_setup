@@ -10,4 +10,5 @@ echo Locking down my home directory for my account "'"$(whoami)"'"
 chmod 750 .
 chmod o-rwx *
 chmod o-rwx .*
-
+chmod o+x .
+chmod o+x *
