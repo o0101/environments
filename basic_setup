@@ -1,4 +1,5 @@
 sudo cp commands/* /usr/local/bin
+ldid | ./setup_ldid.sh
 cp vimrc $HOME/.vimrc
 sudo cp vimrc /root/.vimrc
 sudo mkdir -p /usr/share/games/cfortunes/
