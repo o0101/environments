@@ -35,7 +35,7 @@ if [ -z "$1" ]
         sudo certbot certonly --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory --manual-public-ip-logging-ok -d "*.$1" -d $1
 fi
 mkdir -p $HOME/sslcerts
-sudo cp -r -L /etc/letsencrypt/live/$1/* $HOME/sslcerts/
+sudo -u root ./scripts/cp_certs.sh $1 $HOME/sslcerts/
 sudo chown $USER:$USER $HOME/sslcerts/*
 npm i -g serve nodemon pm2 npm
 sudo npm i -g serve nodemon pm2 npm
