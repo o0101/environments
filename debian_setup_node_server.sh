@@ -52,13 +52,6 @@ sudo apt -y install expect
 sudo npm i -g sloc
 sudo apt install cloc sloccount more-utils
 ldid | ./setup_ldid.sh
-cd $HOME
-echo Locking down my home directory for my account "'"$(whoami)"'"
-chmod 750 .
-chmod o-rwx *
-chmod o-rwx .*
-chmod o+x .
-chmod o+x *
 sudo apt install qemu binfmt-support qemu-user-static
 sudo groupadd no-net
 sudo useradd -g no-net netless
