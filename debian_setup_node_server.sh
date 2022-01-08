@@ -39,7 +39,9 @@ sudo -u root ./scripts/cp_certs.sh $1 $HOME/sslcerts/
 sudo chown $USER:$USER $HOME/sslcerts/*
 npm i -g serve nodemon pm2 npm
 sudo npm i -g serve nodemon pm2 npm
-sudo apt install psmisc htop nethogs
+sudo apt install psmisc htop nethogs 
+sudo apt install strace 
+sudo apt install reptyr
 sudo apt install libcgroup1 cgroup-tools
 curl -L -o bat.deb https://github.com/sharkdp/bat/releases/download/v0.13.0/bat_0.13.0_amd64.deb
 sudo dpkg -i bat.deb
