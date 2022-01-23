@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+ips=$(hostname -I)
+for ip in $ips 
+do
+  hs=$(dig -x $ip +short)
+  if [[ ! -z "$hs" ]]
+  then
+    echo "$hs"
+  fi
+done
