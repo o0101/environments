@@ -1,7 +1,22 @@
 #!/usr/bin/bash
 
-ips=$(hostname -I)
-for ip in $ips 
+file=$(mktemp)
+
+ipsh=$(hostname -I)
+ips=$(curl -s icanhazip.com)
+ips4=$(curl -s ipv4.icanhazip.com)
+for ip in "$ipsh $ips4 $ips6"
+do
+  echo $ip >> $file
+  #hs=$(dig -x $ip +short)
+  #if [[ ! -z "$hs" ]]
+  #then
+  #  echo "$hs"
+  #fi
+done
+
+uip=$(uniq $file)
+for ip in $uip
 do
   hs=$(dig -x $ip +short)
   if [[ ! -z "$hs" ]]
@@ -9,3 +24,5 @@ do
     echo "$hs"
   fi
 done
+
+rm $file
