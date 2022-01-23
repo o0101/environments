@@ -28,6 +28,9 @@ do
 done
 
 hosts=$(sort $file | uniq)
-echo $hosts
+for host in $hosts
+do
+  echo $host
+done
 
 rm $file
