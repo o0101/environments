@@ -11,4 +11,5 @@ mkdir -p $HOME/sslcerts
 sudo -u root cp_certs $1 $HOME/sslcerts/
 sudo chown $USER:$USER $HOME/sslcerts/*
 
+auto_cert_renew $1 $USER
 
