@@ -12,5 +12,5 @@ fi
 
 sudo cp ./renew_tls.sh /root/
 # add our job to crontab if it's not there already
-(sudo crontab -l | grep "tls_renew.sh $1") || ( sudo crontab -l; echo "0 12 * * * /root/tls_renew.sh $1 $2"; ) | sudo crontab
+(sudo crontab -l | grep "renew_tls.sh $1") || ( sudo crontab -l; echo "0 12 * * * /root/renew_tls.sh $1 $2"; ) | sudo crontab
 
