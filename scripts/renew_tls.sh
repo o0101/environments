@@ -11,7 +11,7 @@ if [[ -z "$2" ]]; then
   exit 1
 fi
 
-sudo certbot renew --dry-run
+sudo certbot renew --quiet
 mkdir -p /home/$2/sslcerts
 sudo -u root cp_certs $1 /home/$2/sslcerts/
 sudo chown $2:$2 /home/$2/sslcerts/*
