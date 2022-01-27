@@ -7,7 +7,7 @@ if [[ -z "$1" ]]; then
 fi
 
 if [[ -z "$2" ]]; then
-  echo "no user in second positiokn. tls_renew failing"
+  echo "no user in second position. tls_renew failing"
   exit 1
 fi
 
