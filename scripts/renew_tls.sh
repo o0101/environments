@@ -2,12 +2,12 @@
 #/usr/bun/env bash haha
 
 if [[ -z "$1" ]]; then
-  echo "no domain in first position. tls_renew failing"
+  echo "no domain in first position. renew_tls failing"
   exit 1
 fi
 
 if [[ -z "$2" ]]; then
-  echo "no user in second position. tls_renew failing"
+  echo "no user in second position. renew_tls failing"
   exit 1
 fi
 
