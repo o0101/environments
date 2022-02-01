@@ -32,7 +32,8 @@ if [ -z "$1" ]
   then
     echo "skipping TLS cert issue"
   else
-        sudo certbot certonly --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory --manual-public-ip-logging-ok -d "*.$1" -d $1
+        #sudo certbot certonly --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory --manual-public-ip-logging-ok -d "*.$1" -d $1
+	tls $1
 fi
 mkdir -p $HOME/sslcerts
 sudo -u root ./scripts/cp_certs.sh $1 $HOME/sslcerts/
