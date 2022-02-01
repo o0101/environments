@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+if [[ -z "$1" ]]; then
+  echo "use swap size as first argument. e.g. '1G'"
+  exit 1
+fi
+
+if ls /swapfile; then
+  echo "swapfile already exists. exiting..."
+  exit 0
+fi
+
+sudo fallocate -l $1 /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo swapon --show
+
