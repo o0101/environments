@@ -13,6 +13,7 @@ git config --global core.editor "vim"
 git config --global pull.rebase false
 git config --global init.defaultBranch boss
 sudo update-alternatives --config editor
+sudo timedatectl set-timezone Asia/Singapore
 sudo apt-get update && sudo apt-get -y upgrade
 sudo apt -y install curl nodejs certbot vim
 sudo apt -y install nodejs build-essential
