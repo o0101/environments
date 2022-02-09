@@ -10,9 +10,9 @@ if ls /swapfile; then
   exit 0
 fi
 
-sudo fallocate -l $1 /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
+sudo fallocate -l $1 /swapfile$2
+sudo chmod 600 /swapfile$2
+sudo mkswap /swapfile$2
+sudo swapon /swapfile$2
 sudo swapon --show
 
