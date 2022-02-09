@@ -5,7 +5,7 @@ if [[ -z "$1" ]]; then
   exit 1
 fi
 
-if ls /swapfile; then
+if ls /swapfile$2; then
   echo "swapfile already exists. exiting..."
   exit 0
 fi
