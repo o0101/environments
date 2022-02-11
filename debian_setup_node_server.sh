@@ -65,7 +65,7 @@ else
 fi
 sudo apt -y install expect
 sloc || npm i -g sloc
-sudo apt install cloc sloccount more-utils
+sudo apt install cloc sloccount moreutils
 ldid | ./setup_ldid.sh
 sudo apt install qemu binfmt-support qemu-user-static
 sudo groupadd no-net
