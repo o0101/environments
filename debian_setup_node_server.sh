@@ -44,9 +44,9 @@ fi
 mkdir -p $HOME/sslcerts
 sudo -u root ./scripts/cp_certs.sh $1 $HOME/sslcerts/
 sudo chown $USER:$USER $HOME/sslcerts/*
-serve || npm i -g serve
-pm2 || npm i -g pm2
-nodemon || npm i -g nodemon
+which serve || npm i -g serve
+which pm2 || npm i -g pm2
+which nodemon || npm i -g nodemon
 #sudo npm i -g serve nodemon pm2 npm
 sudo apt install psmisc htop nethogs 
 sudo apt install strace 
@@ -65,7 +65,7 @@ else
 fi
 sudo apt -y install expect
 sloc || npm i -g sloc
-sudo apt install cloc sloccount more-utils
+sudo apt install cloc sloccount moreutils
 ldid | ./setup_ldid.sh
 sudo apt install qemu binfmt-support qemu-user-static
 sudo groupadd no-net
