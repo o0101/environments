@@ -44,9 +44,9 @@ fi
 mkdir -p $HOME/sslcerts
 sudo -u root ./scripts/cp_certs.sh $1 $HOME/sslcerts/
 sudo chown $USER:$USER $HOME/sslcerts/*
-serve || npm i -g serve
-pm2 || npm i -g pm2
-nodemon || npm i -g nodemon
+which serve || npm i -g serve
+which pm2 || npm i -g pm2
+which nodemon || npm i -g nodemon
 #sudo npm i -g serve nodemon pm2 npm
 sudo apt install psmisc htop nethogs 
 sudo apt install strace 
@@ -76,6 +76,6 @@ else
   echo "Add the following line to sudoers"
   echo "ALL ALL=(:no-net) NOPASSWD:ALL"
   read -p "Enter to edit sudoers"
-  sudo visudo
+  read | sudo visudo
 fi
 echo "YOU. ARE. AWESOME! :p ;) xx"
