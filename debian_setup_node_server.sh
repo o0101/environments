@@ -16,6 +16,7 @@ sudo apt-get update && sudo apt-get -y upgrade
 sudo apt -y install curl nodejs certbot vim
 sudo apt -y install nodejs build-essential
 curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh -o install_nvm.sh
+chmod +x ./install_nvm.sh
 bash ./install_nvm.sh
 # install for root as well
 sudo bash ./install_nvm.sh
