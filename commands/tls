@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#/usr/bun/env bash haha
+
+if [[ -z "$1" ]]; then
+  echo "Supply a domain name as first argument"
+  exit 1
+fi
+
+sudo certbot certonly --standalone -d $1 --agree-tos -m cris7fe@outlook.com --no-eff-email
+mkdir -p $HOME/sslcerts
+sudo -u root cp_certs $1 $HOME/sslcerts/
+sudo chown $USER:$USER $HOME/sslcerts/*
+
+auto_cert_renew $1 $USER
+
