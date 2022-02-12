@@ -5,8 +5,8 @@ if [ -z "$1" ]
     echo "Need to add 1 argument: domain name"
 fi
 ./basic_setup
-sudo apt install git curl wget
-addswap 1G
+sudo apt install git curl wget psmisc moreutils bc
+addswap 2G
 git config --global user.email "22254235+crislin2046@users.noreply.github.com"
 git config --global user.name "Cris Stringfellow"
 git config --global core.editor "vim"
