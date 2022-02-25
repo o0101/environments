@@ -1,7 +1,7 @@
 #!/bin/bash
 
 me=$(whoami)
-sudo apt install xfce4 xfce4-goodies tightvncserver
+sudo apt install xfce4 xfce4-goodies tightvncserver dbus-x11
 sudo systemctl clean vncserver
 read -p "Set up a password now"
 vncserver
@@ -10,9 +10,9 @@ grep -qxF "startxfce4 &" $HOME/.vnc/xstartup || echo "startxfce4 &" >> $HOME/.vn
 echo "
 #!/bin/bash
 xrdb $HOME/.Xresources
-autocutsel -fork
-vncconfig -iconic &
-vncconfig -nowin &
+#autocutsel -fork
+#vncconfig -iconic &
+#vncconfig -nowin &
 startxfce4 &
 " > $HOME/.vnc/xstartup
 chmod +x $HOME/.vnc/xstartup
