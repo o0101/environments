@@ -1,0 +1,11 @@
+diff --git a/vimrc b/vimrc
+index 78e5869..23445ff 100644
+--- a/vimrc
++++ b/vimrc
+@@ -79,4 +79,6 @@ set viminfo='100,<1000,s100,h
+
+ noremap <C-Q> <C-V>
+ set mouse-=a
++set laststatus=2
++set ruler
+

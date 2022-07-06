@@ -79,4 +79,6 @@ set viminfo='100,<1000,s100,h
 
 noremap <C-Q> <C-V>
 set mouse-=a
+set laststatus=2
+set ruler
 
