@@ -4,14 +4,9 @@ if [ -z "$1" ]
   then
     echo "Need to add 1 argument: domain name"
 fi
-./basic_setup
 sudo apt install git curl wget psmisc moreutils bc htop
+./basic_setup
 addswap 2G
-git config --global user.email "22254235+crislin2046@users.noreply.github.com"
-git config --global user.name "Cris Stringfellow"
-git config --global core.editor "vim"
-git config --global pull.rebase false
-git config --global init.defaultBranch boss
 sudo update-alternatives --config editor
 sudo timedatectl set-timezone Asia/Singapore
 sudo apt-get update && sudo apt-get -y upgrade
