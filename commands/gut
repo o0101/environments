@@ -1,4 +1,4 @@
 set +e;
 git submodule foreach --recursive 'gut "'"$@"'" || :'
-git add .; git commit -m "$@"; git pull; git push;
+git add .; git commit -S -m "$@"; git pull; git push;
 set -e;
