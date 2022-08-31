@@ -1,9 +1,14 @@
+git config --global gpg.format ssh
 git config --global user.email "22254235+crislin2046@users.noreply.github.com"
 git config --global user.name "Cris Stringfellow"
 git config --global core.editor "vim"
 git config --global pull.rebase false
 git config --global init.defaultBranch boss
-git config --global pull.rebase false
+git config --global user.signingKey "$HOME/.ssh/id_ed25519.pub"
+git config --global gpg.ssh.allowedSignersFile ~/.config/git/allowed_signers
+mkdir -p ~/.config/git
+touch ~/.config/git/allowed_signers
+echo "22254235+crislin2046@users.noreply.github.com $(cat ~/.ssh/id_ed25519.pub)" >> ~/.config/git/allowed_signers
 sudo cp commands/* /usr/local/bin
 cp vimrc $HOME/.vimrc
 sudo cp vimrc /root/.vimrc

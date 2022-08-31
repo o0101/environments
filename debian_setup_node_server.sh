@@ -5,7 +5,8 @@ if [ -z "$1" ]
     echo "Need to add 1 argument: domain name"
 fi
 ./basic_setup
-sudo apt -y install git curl wget psmisc moreutils bc htop
+#sudo apt -y install psmisc
+sudo apt -y install git curl wget moreutils bc htop
 sudo apt -y install software-properties-common
 sudo apt-get -y install dh-autoreconf libcurl4-gnutls-dev libexpat1-dev \
   gettext libz-dev libssl-dev
@@ -16,7 +17,10 @@ cd $TMPD1
 wget -O git.tar.gz https://github.com/git/git/archive/refs/tags/v2.34.4.tar.gz
 gunzip git.tar.gz
 tar -xf git.tar
-cd git/
+rm git.tar
+cd git*
+pwd
+echo $TMPD!
 make configure
 ./configure --prefix=/usr
 make all doc info
@@ -32,6 +36,8 @@ cd openssh*
 ./configure
 make
 sudo make install
+cd $HOME
+rm -rf $TMPD2
 addswap 4G
 git config --global gpg.format ssh
 git config --global user.email "22254235+crislin2046@users.noreply.github.com"

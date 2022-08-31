@@ -82,3 +82,7 @@ set mouse-=a
 set laststatus=2
 set ruler
 
+" status
+:set statusline=%f\ %h%w%m%r\ %{strftime('%c')}\ %=%(%l,%c%V\ %=\ %P%) 
+:call timer_start(500, {-> execute(':let &stl=&stl')}, {'repeat': -1})
+
