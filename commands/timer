@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+time=$(($1 * 60))
+sleep $time
+
+sleep 10 && osascript -e 'display alert "Back to work" message "It is time to return to work. The '"$1"' minute break is over."' &
+
+while true 
+do
+  echo Get back to work
+  tput bel
+  sleep 1
+done
+
