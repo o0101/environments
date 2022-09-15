@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
+trap 'kill $BG' EXIT
+
+echo "Timer started at " $(date)
+
 time=$(($1 * 60))
 sleep $time
 
 sleep 10 && osascript -e 'display alert "Back to work" message "It is time to return to work. The '"$1"' minute break is over."' &
+BG=$?
 
 while true 
 do

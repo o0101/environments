@@ -1,1 +1,1 @@
-git add . && git commit -m "$2" && npm version $1 && git push --tags && git push && npm publish --access=public
+git add . && git commit -S -m "$2" && npm version $1 && git push --tags && git push && npm publish --access=public
