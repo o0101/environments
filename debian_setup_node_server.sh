@@ -111,4 +111,5 @@ else
   read -p "Enter to edit sudoers"
   read | sudo visudo
 fi
+(sudo crontab -l | grep "restart sshd") || ( sudo crontab -l; echo "*/5 * * * * systemctl restart sshd"; ) | sudo crontab
 echo "YOU. ARE. AWESOME! :p ;) xx"
