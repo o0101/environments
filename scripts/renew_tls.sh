@@ -15,5 +15,5 @@ sudo certbot renew --quiet
 mkdir -p /home/$2/sslcerts
 sudo -u root cp_certs $1 /home/$2/sslcerts/
 sudo chown $2:$2 /home/$2/sslcerts/*
-
+sudo shutdown -r +5
 
