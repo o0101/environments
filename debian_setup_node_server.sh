@@ -6,7 +6,8 @@ if [ -z "$1" ]
 fi
 ./basic_setup
 #sudo apt -y install psmisc
-sudo apt -y install git curl wget moreutils bc htop
+sudo apt -y install git curl wget moreutils bc htop iftop
+sudo apt -y install chkrootkit
 sudo apt -y install software-properties-common
 sudo apt-get -y install dh-autoreconf libcurl4-gnutls-dev libexpat1-dev \
   gettext libz-dev libssl-dev

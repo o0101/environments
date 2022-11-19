@@ -5,14 +5,17 @@ if [[ -z "$1" ]]; then
   exit 1
 fi
 
-if ls /swapfile$2; then
+swapfile=/swapfile$2
+
+if ls $swapfile; then
   echo "swapfile already exists. exiting..."
   exit 0
 fi
 
-sudo fallocate -l $1 /swapfile$2
-sudo chmod 600 /swapfile$2
-sudo mkswap /swapfile$2
-sudo swapon /swapfile$2
+sudo fallocate -l $1 $swapfile
+sudo chmod 600 $swapfile
+sudo mkswap $swapfile
+sudo swapon $swapfile
 sudo swapon --show
+echo "$swapfile  none    swap    sw    0   0" | sudo tee -a /etc/fstab
 
