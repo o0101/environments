@@ -11,8 +11,10 @@ mkdir -p ~/.config/git
 touch ~/.config/git/allowed_signers
 echo "22254235+crislin2046@users.noreply.github.com $(cat ~/.ssh/id_ed25519.pub)" >> ~/.config/git/allowed_signers
 sudo cp commands/* /usr/local/bin
+cp bashrc $HOME/.bashrc.new
 cp vimrc $HOME/.vimrc
 sudo cp vimrc /root/.vimrc
+sudo cp bashrc /root/.bashrc.new
 sudo mkdir -p /usr/share/games/cfortunes/
 sudo cp cfortunes/* /usr/share/games/cfortunes/
 sudo apt -y install pandoc iptables moreutils
