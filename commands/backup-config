@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ ! -d $HOME/Documents/shell-config ]; then
+  mkdir -p $HOME/Documents/shell-config
+fi
+
+temp=$(mktemp -d)
+cp -r $HOME/.config $temp
+cp -r $temp $HOME/Documents/shell-config/
+rm -rf $temp
