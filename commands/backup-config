@@ -5,6 +5,6 @@ if [ ! -d $HOME/Documents/shell-config ]; then
 fi
 
 temp=$(mktemp -d)
-cp -r $HOME/.config $temp
-cp -r $temp $HOME/Documents/shell-config/
+cp -r $HOME/.config/* $temp/
+cp -r $temp/* $HOME/Documents/shell-config/
 rm -rf $temp
