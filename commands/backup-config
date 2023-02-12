@@ -5,6 +5,8 @@ if [ ! -d $HOME/Documents/shell-config ]; then
 fi
 
 temp=$(mktemp -d)
-cp -r $HOME/.config/* $temp/
+cp -r $HOME/.config/iterm2 $temp/
+cp -r $HOME/.config/karabiner $temp/
+cp -r $HOME/.config/git $temp/
 cp -r $temp/* $HOME/Documents/shell-config/
 rm -rf $temp
