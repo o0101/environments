@@ -7,8 +7,12 @@ git config --global pull.rebase false
 git config --global init.defaultBranch boss
 git config --global user.signingKey "$HOME/.ssh/id_ed25519.pub"
 git config --global gpg.ssh.allowedSignersFile ~/.config/git/allowed_signers
-mkdir -p ~/.config/git
+git config --global core.hooksPath ~/.config/git/hooks
+mkdir -p ~/.config/git/
 touch ~/.config/git/allowed_signers
+mkdir -p ~/.config/git/hooks/
+cp scripts/no-large-files.sh ~/.config/git/hooks/pre-commit
+chmod +x -R ~/.config/git/hooks/*
 echo "22254235+crislin2046@users.noreply.github.com $(cat ~/.ssh/id_ed25519.pub)" >> ~/.config/git/allowed_signers
 sudo cp commands/* /usr/local/bin
 cp vimrc $HOME/.vimrc
