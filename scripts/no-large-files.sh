@@ -9,7 +9,11 @@ files=$(git diff --cached --name-only --diff-filter=AM)
 for file in $files
 do
   # Get the size of the file
-  file_size=$(wc -c < "$file")
+  if [ -f "$file" ]; then
+    file_size=$(wc -c < "$file")
+  else
+    continue
+  fi
 
   # Check if the file size is greater than the limit
   if [ $file_size -gt $MAX_FILE_SIZE ]; then
