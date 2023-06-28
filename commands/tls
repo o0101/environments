@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #/usr/bun/env bash haha
 
+which certbot || sudo apt install certbot
+
 if [[ -z "$1" ]]; then
   echo "Supply a domain name as first argument"
   exit 1
