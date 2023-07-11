@@ -1,2 +1,4 @@
 branch="$1"
-(git checkout $branch || git checkout -b $branch) && git submodule foreach --recursive 'git checkout '"$branch"' || git checkout -b '"$branch"' || :' && git pull origin $branch && git branch --set-upstream-to=origin/$branch $branch
+git switch -c $branch
+git pull
+git push --set-upstream origin $branch
