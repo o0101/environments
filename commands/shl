@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+url="$1"
+shift
+git clone --recurse-submodules --shallow-submodules --depth 1 "$url" "${@}"
+

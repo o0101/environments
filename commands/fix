@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+vim `git diff --name-only | uniq`

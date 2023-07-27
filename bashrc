@@ -118,8 +118,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 set -o ignoreeof
 
-cd $HOME
-
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -243,7 +241,4 @@ set -o ignoreeof
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-
-
 cd $HOME
-
