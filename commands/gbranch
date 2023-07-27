@@ -1,4 +1,8 @@
 branch="$1"
-git switch -c $branch
-git pull
-git push --set-upstream origin $branch
+if git switch $branch; then
+  git pull
+else 
+  git switch -c $branch;
+  git push --set-upstream origin $branch
+fi
+
