@@ -1,4 +1,7 @@
 branch="$1"
-git switch -c $branch
+if git switch -c $branch > /dev/null 2>&1; then
+  git push --set-upstream $(git remote) $branch > /dev/null
+else
+  git switch $branch
+fi
 git pull
-git push --set-upstream origin $branch
