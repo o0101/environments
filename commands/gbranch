@@ -8,7 +8,7 @@ fi
 branch="$1"
 
 # Check if branch exists remotely
-remote_branch_exists=$(git ls-remote --heads $(git remote get-url "$(git remote)") | grep refs/heads/$branch)
+remote_branch_exists=$(git ls-remote --heads $(git remote | tail -n 1 get-url "$(git remote | tail -n 1)") | grep refs/heads/$branch)
 
 # Check if branch exists locally
 local_branch_exists=$(git branch --list "$branch")
@@ -17,8 +17,8 @@ local_branch_exists=$(git branch --list "$branch")
 if [ -z "$remote_branch_exists" ] && [ -z "$local_branch_exists" ]; then
   # Scenario 1: Branch doesn't exist locally or remotely
   if git switch -c "$branch" > /dev/null 2>&1; then
-    git branch --set-upstream-to="$(git remote)/$branch" "$branch"
-    git push --set-upstream "$(git remote)" "$branch" > /dev/null
+    git branch --set-upstream-to="$(git remote | tail -n 1)/$branch" "$branch"
+    git push --set-upstream "$(git remote | tail -n 1)" "$branch" > /dev/null
     git pull
   else
     echo "An error occurred. Could not switch to branch $branch."
@@ -30,12 +30,12 @@ elif [ -z "$remote_branch_exists" ] && [ -n "$local_branch_exists" ]; then
 elif [ -n "$remote_branch_exists" ] && [ -z "$local_branch_exists" ]; then
   # Scenario 3: Branch exists remotely but not locally
   git switch "$branch"
-  git branch --set-upstream-to="$(git remote)/$branch" "$branch"
-  git pull "$(git remote)" "$branch"
+  git branch --set-upstream-to="$(git remote | tail -n 1)/$branch" "$branch"
+  git pull "$(git remote | tail -n 1)" "$branch"
 else
   # Scenario 4: Branch exists both locally and remotely
   git switch "$branch"
-  git branch --set-upstream-to="$(git remote)/$branch" "$branch"
-  git pull "$(git remote)" "$branch"
+  git branch --set-upstream-to="$(git remote | tail -n 1)/$branch" "$branch"
+  git pull "$(git remote | tail -n 1)" "$branch"
 fi
 
