@@ -1,3 +1,4 @@
+npm config set sign-git-tag true
 git config --global gpg.format ssh
 git config --global commit.gpgSign true
 git config --global user.email "22254235+crislin2046@users.noreply.github.com"
