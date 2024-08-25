@@ -14,11 +14,11 @@ sudo apt-get -y install dh-autoreconf libcurl4-gnutls-dev libexpat1-dev \
 sudo apt-get -y install asciidoc xmlto docbook2x
 sudo apt-get -y install install-info
 GITVER=$(git --version)
-read -p "Install git version 2.34 (current version is: $GITVER)? " -n 1 -r
 echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
+read -p "Install git version 2.41 (current version is: $GITVER)? " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]];
 then
-  ./scripts/install_git_2.34.sh
+  ./scripts/install_git_2.41.sh
 fi
 addswap 4G
 git config --global gpg.format ssh
