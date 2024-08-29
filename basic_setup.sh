@@ -1,3 +1,7 @@
+sudo=""
+if command -v sudo &>/dev/null; then
+  sudo="$(command -v sudo)"
+fi
 npm config set sign-git-tag true
 git config --global gpg.format ssh
 git config --global commit.gpgSign true
@@ -15,16 +19,16 @@ mkdir -p ~/.config/git/hooks/
 cp scripts/no-large-files.sh ~/.config/git/hooks/pre-commit
 chmod +x -R ~/.config/git/hooks/*
 echo "22254235+crislin2046@users.noreply.github.com $(cat ~/.ssh/id_ed25519.pub)" >> ~/.config/git/allowed_signers
-sudo cp commands/* /usr/local/bin
+$sudo cp commands/* /usr/local/bin
 cp bashrc $HOME/.bashrc.new
 cp vimrc $HOME/.vimrc
-sudo cp vimrc /root/.vimrc
-sudo cp bashrc /root/.bashrc.new
-sudo mkdir -p /usr/share/games/cfortunes/
-sudo cp cfortunes/* /usr/share/games/cfortunes/
-sudo apt -y install pandoc iptables moreutils
+$sudo cp vimrc /root/.vimrc
+$sudo cp bashrc /root/.bashrc.new
+$sudo mkdir -p /usr/share/games/cfortunes/
+$sudo cp cfortunes/* /usr/share/games/cfortunes/
+$sudo apt -y install pandoc iptables moreutils
 cp .bash_aliases $HOME/.bash_aliases
 cp scripts/renew_tls.sh $HOME/.renew_tls.sh
 if [[ "$OSTYPE" == darwin* ]]; then
-  sudo cp macos-commands/* /usr/local/bin/
+  $sudo cp macos-commands/* /usr/local/bin/
 fi
