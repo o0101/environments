@@ -22,8 +22,8 @@ then
 fi
 addswap 4G
 git config --global gpg.format ssh
-git config --global user.email "22254235+crislin2046@users.noreply.github.com"
-git config --global user.name "Cris Stringfellow"
+git config --global user.email "development.team@dosyago.com"
+git config --global user.name "DOSAYGO Engineering"
 git config --global core.editor "vim"
 git config --global pull.rebase false
 git config --global init.defaultBranch boss
