@@ -92,3 +92,6 @@ augroup END
 :set statusline=%f\ %h%w%m%r\ %{strftime('%c')}\ %=%(%l,%c%V\ %=\ %P%) 
 :call timer_start(500, {-> execute(':let &stl=&stl')}, {'repeat': -1})
 
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
