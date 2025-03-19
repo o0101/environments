@@ -29,6 +29,9 @@ $sudo cp cfortunes/* /usr/share/games/cfortunes/
 $sudo apt -y install pandoc iptables moreutils
 cp .bash_aliases $HOME/.bash_aliases
 cp scripts/renew_tls.sh $HOME/.renew_tls.sh
+cp affirm.py $HOME/.config/
+echo 'echo "$(python3 $HOME/.config/affirm.py)"' >> $HOME/.bash_profile
+
 if [[ "$OSTYPE" == darwin* ]]; then
   $sudo cp macos-commands/* /usr/local/bin/
 fi
