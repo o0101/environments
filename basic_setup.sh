@@ -21,6 +21,8 @@ mkdir -p ~/.config/git/hooks/
 cp scripts/no-large-files.sh ~/.config/git/hooks/pre-commit
 chmod +x -R ~/.config/git/hooks/*
 echo "development.team@dosyago.com $(cat ~/.ssh/id_ed25519.pub)" >> ~/.config/git/allowed_signers
+mkdir -p ~/.local/bin/
+$sudo cp commands/* ~/.local/bin/
 $sudo cp commands/* /usr/local/bin
 cp bashrc $HOME/.bashrc.new
 cp vimrc $HOME/.vimrc
