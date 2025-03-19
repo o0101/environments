@@ -2,7 +2,9 @@ sudo=""
 if command -v sudo &>/dev/null; then
   sudo="$(command -v sudo)"
 fi
-npm config set sign-git-tag true
+if command -v npm &>/dev/null; then
+  npm config set sign-git-tag true
+fi
 git config --global gpg.format ssh
 git config --global commit.gpgSign true
 git config --global user.email "development.team@dosyago.com"
@@ -19,6 +21,8 @@ mkdir -p ~/.config/git/hooks/
 cp scripts/no-large-files.sh ~/.config/git/hooks/pre-commit
 chmod +x -R ~/.config/git/hooks/*
 echo "development.team@dosyago.com $(cat ~/.ssh/id_ed25519.pub)" >> ~/.config/git/allowed_signers
+mkdir -p ~/.local/bin/
+$sudo cp commands/* ~/.local/bin/
 $sudo cp commands/* /usr/local/bin
 cp bashrc $HOME/.bashrc.new
 cp vimrc $HOME/.vimrc
