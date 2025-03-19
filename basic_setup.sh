@@ -2,7 +2,9 @@ sudo=""
 if command -v sudo &>/dev/null; then
   sudo="$(command -v sudo)"
 fi
-npm config set sign-git-tag true
+if command -v npm &>/dev/null; then
+  npm config set sign-git-tag true
+fi
 git config --global gpg.format ssh
 git config --global commit.gpgSign true
 git config --global user.email "development.team@dosyago.com"
