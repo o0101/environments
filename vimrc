@@ -5,13 +5,9 @@
 " It is recommended to make changes after sourcing debian.vim since it alters
 " the value of the 'compatible' option.
 
-" This line should not be removed as it ensures that various options are
-" properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
 
 " Uncomment the next line to make Vim more Vi-compatible
-" NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
-" options, so any other options should be set AFTER setting 'compatible'.
 "set compatible
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
@@ -88,7 +84,25 @@ augroup Makefile
   autocmd FileType make setlocal noexpandtab
 augroup END
 
-" status
-:set statusline=%f\ %h%w%m%r\ %{strftime('%c')}\ %=%(%l,%c%V\ %=\ %P%) 
-:call timer_start(500, {-> execute(':let &stl=&stl')}, {'repeat': -1})
+" Encoding settings: UTF-8 default, conditional BOM for .ps1 with Unicode
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,latin1
+set fileencoding=utf-8  " Default to UTF-8 without BOM
 
+" Function to check for Unicode (non-ASCII) characters
+function! HasUnicode()
+  return search('[^\x00-\x7F]', 'n') > 0
+endfunction
+
+" Apply BOM to .ps1 files only if Unicode is present
+autocmd BufNewFile,BufWrite *.ps1 if HasUnicode() | set bomb | else | set nobomb | endif
+autocmd BufNewFile,BufWrite *.ps1 set fileencoding=utf-8
+
+" Dynamic statusline with time and encoding
+function! UpdateStatusLine(timer)
+  let time = strftime('%c')
+  let enc = (&fenc != '' ? &fenc : &enc) . (exists('+bomb') && &bomb ? ',bom' : '')
+  let &statusline = '%f %h%w%m%r [' . time . '] %= [' . enc . '] %-14.(%l,%c%V%) %P'
+endfunction
+set statusline=%f\ %h%w%m%r\ [%{strftime('%c')}]%=\ [%{&fenc!=''?&fenc:&enc}%{exists('+bomb')&&&bomb?',bom':''}]\ %-14.(%l,%c%V%)\ %P
+call timer_start(500, 'UpdateStatusLine', {'repeat': -1})

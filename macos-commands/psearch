@@ -1,0 +1,31 @@
+#!/usr/bin/env osascript
+on run argv
+  set processNameArg to item 1 of argv
+  tell application "System Events"
+    set processList to every process whose name contains processNameArg
+    set processInfo to ""
+    repeat with proc in processList
+      set processName to name of proc
+      set processID to unix id of proc
+      try
+        set processPath to path of proc
+      on error
+        set processPath to "N/A"
+      end try
+      set isFrontmost to frontmost of proc
+      set windowCount to count of windows of proc
+
+      -- Get additional details from the ps command
+      set psCommand to "ps -p " & processID & " -o uid,pid,ppid,stime,tty,time,comm | tail -n +2"
+      set psDetails to do shell script psCommand
+      
+      set processInfo to processInfo & "name:" & processName & ", id:" & processID & ", path:" & processPath & ", frontmost:" & isFrontmost & ", windows:" & windowCount & ", ps:(" & psDetails & ")" & linefeed
+    end repeat
+    if processInfo is not "" then
+      return processInfo
+    else
+      return "No processes found containing name: " & processNameArg
+    end if
+  end tell
+end run
+
