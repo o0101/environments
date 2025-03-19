@@ -28,3 +28,4 @@ cp scripts/renew_tls.sh $HOME/.renew_tls.sh
 if [[ "$OSTYPE" == darwin* ]]; then
   sudo cp macos-commands/* /usr/local/bin/
 fi
+sudo update-alternatives --config editor
