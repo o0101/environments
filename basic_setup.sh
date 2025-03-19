@@ -5,8 +5,8 @@ fi
 npm config set sign-git-tag true
 git config --global gpg.format ssh
 git config --global commit.gpgSign true
-git config --global user.email "22254235+crislin2046@users.noreply.github.com"
-git config --global user.name "Cris Stringfellow"
+git config --global user.email "development.team@dosyago.com"
+git config --global user.name "DOSAYGO Engineering"
 git config --global core.editor "vim"
 git config --global pull.rebase false
 git config --global init.defaultBranch boss
@@ -18,7 +18,7 @@ touch ~/.config/git/allowed_signers
 mkdir -p ~/.config/git/hooks/
 cp scripts/no-large-files.sh ~/.config/git/hooks/pre-commit
 chmod +x -R ~/.config/git/hooks/*
-echo "22254235+crislin2046@users.noreply.github.com $(cat ~/.ssh/id_ed25519.pub)" >> ~/.config/git/allowed_signers
+echo "development.team@dosyago.com $(cat ~/.ssh/id_ed25519.pub)" >> ~/.config/git/allowed_signers
 $sudo cp commands/* /usr/local/bin
 cp bashrc $HOME/.bashrc.new
 cp vimrc $HOME/.vimrc
@@ -32,3 +32,4 @@ cp scripts/renew_tls.sh $HOME/.renew_tls.sh
 if [[ "$OSTYPE" == darwin* ]]; then
   $sudo cp macos-commands/* /usr/local/bin/
 fi
+sudo update-alternatives --config editor

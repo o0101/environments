@@ -1,1 +1,4 @@
-git add . && git commit -S -m "$2" && npm version $1 && git push --tags && git push && npm publish --access=public
+npm version $1 ;
+git add . && git commit -S -m "$2";
+git tag "v$(cat package.json | jq .version | tr -d '"')";
+git push --tags && git push && npm publish --access=public

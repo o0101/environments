@@ -238,7 +238,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 set -o ignoreeof
 
+source "${NVM_DIR}/nvm.sh";
+
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+export EDITOR=vim
+
 cd $HOME
+
