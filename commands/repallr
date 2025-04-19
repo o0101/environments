@@ -11,7 +11,7 @@ echo -n "Do you want to do this (y/n)? "
 read answer
 
 if [ "$answer" != "${answer#[Yy]}" ] ;then
-	find . -type d -iname "$4" -prune -o -type f -iname "$1" -exec sed -i '' -e "s/$2/$3/g" {} +
+	find . \( -path ./.git -o -path "$4" \) -prune -o -type f -iname "$1" -exec sed -i '' -e "s/$2/$3/g" {} +
 else
 	exit 1
 fi
