@@ -15,6 +15,7 @@ git config --global init.defaultBranch boss
 git config --global user.signingKey "$HOME/.ssh/id_ed25519.pub"
 git config --global gpg.ssh.allowedSignersFile ~/.config/git/allowed_signers
 git config --global core.hooksPath ~/.config/git/hooks
+git config set advice.setUpstreamFailure false
 mkdir -p ~/.config/git/
 touch ~/.config/git/allowed_signers
 mkdir -p ~/.config/git/hooks/
