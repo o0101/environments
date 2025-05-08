@@ -7,8 +7,9 @@ fi
 # Assign the branch name
 branch="$1"
 
-# Check if branch exists remotely
-remote_branch_exists=$(git ls-remote --heads $(git remote | tail -n 1 get-url "$(git remote | tail -n 1)") | grep refs/heads/$branch)
+remote=$(git remote | tail -n 1)
+remote_url=$(git remote get-url "$remote")
+remote_branch_exists=$(git ls-remote --heads "$remote_url" | grep "refs/heads/$branch")
 
 # Check if branch exists locally
 local_branch_exists=$(git branch --list "$branch")
